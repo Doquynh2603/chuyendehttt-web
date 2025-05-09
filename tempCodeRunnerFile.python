@@ -1,0 +1,42 @@
+import csv
+import random
+import os
+
+# Đường dẫn folder cụ thể (thay đổi thành đường dẫn bạn muốn)
+output_folder = r"D:\\NAM4\\KY2\\Kho_DL_va_khai_pha\\New folder"  # Ví dụ: "C:\Data\Sales"
+output_file = os.path.join(output_folder, "fact_sales_data.csv")
+
+# Tạo folder nếu chưa tồn tại
+os.makedirs(output_folder, exist_ok=True)
+
+# Phạm vi khóa chính dựa trên số lượng bản ghi thực tế
+time_keys = list(range(1, 66))  # 1 đến 65 (65 bản ghi)
+item_keys = list(range(1, 1001))  # 1 đến 1000 (1000 bản ghi)
+store_keys = list(range(1, 501))  # 1 đến 500 (500 bản ghi)
+customer_keys = list(range(1, 201))  # 1 đến 200 (200 bản ghi, giả định)
+
+# Tạo danh sách 4000 tổ hợp duy nhất
+data = []
+used_combinations = set()
+while len(data) < 4000:
+    time_key = random.choice(time_keys)
+    item_key = random.choice(item_keys)
+    store_key = random.choice(store_keys)
+    customer_key = random.choice(customer_keys)
+    combination = (time_key, item_key, store_key, customer_key)
+    if combination not in used_combinations:
+        used_combinations.add(combination)
+        quantity_ordered = random.randint(1, 50)
+        revenue = round(random.uniform(500, 50000) + 500, 2)
+        profit = round(random.uniform(100, 20000) + 100, 2)
+        data.append([time_key, item_key, store_key, customer_key, quantity_ordered, revenue, profit])
+
+# Ghi vào file CSV
+with open(output_file, 'w', newline='') as file:
+    writer = csv.writer(file)
+    # Ghi header
+    writer.writerow(['time_key', 'item_key', 'store_key', 'customer_key', 'quantity_ordered', 'revenue', 'profit'])
+    # Ghi dữ liệu
+    writer.writerows(data)
+
+print(f"File '{output_file}' đã được tạo với 4000 bản ghi.")

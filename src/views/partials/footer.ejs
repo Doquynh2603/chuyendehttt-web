@@ -1,0 +1,81 @@
+<footer class="footer">
+	<div class="footer__container">
+		<div class="footer__company-name">
+			<img class="footer__logo" src="/imgs/dqc.png" alt="logo">
+			<p>Cửa hàng thời trang DQC</p>
+			<img class="footer__social-media" src="/imgs/set-logo.png" alt="social-media">
+		</div>
+		<div class="footer__company-name--disable">
+			<img class="footer__logo" src="/imgs/dqc.png" alt="logo">
+			<p>Cửa hàng thời trang DQC</p>
+			<img class="footer__social-media" src="/imgs/set-logo.png" alt="social-media">
+		</div>
+		<div class="footer__content--column2">
+			<div class="footer__content--column">
+				<div class="footer__content-title">
+					<h3>VỀ CỬA HÀNG THỜI TRANG DQC</h3>
+				</div>
+				<div class="footer__content-main">
+					<!-- <a href="/about-us" class="footer__listtext">Giới thiệu về cửa hàng thời trang DQC</a> -->
+					<a href="#" class="footer__listtext">Điều khoản chung</a>
+					<a href="/privacy-policy" class="footer__listtext">Chính sách bảo mật</a>
+				</div>
+			</div>
+			<div class="footer__help-content--column">
+				<div class="footer__content-title">
+					<h3>HỖ TRỢ</h3>
+				</div>
+				<div class="footer__content-main">
+					<a href="#" class="footer__listtext">Trung tâm trợ giúp</a>
+					<a href="#" class="footer__listtext">Chính sách bảo hành</a>
+					<a href="#" class="footer__listtext">Chính sách trả hàng & hoàn tiền</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer__contact-content--column">
+			<div class="footer__content-title">
+				<h3>LIÊN HỆ</h3>
+			</div>
+			<div class="footer__content-main">
+				<div class="footer__content-item">
+					<span class="material-symbols-outlined">location_on</span>
+					<a target="_blank" class="footer__listtext">......</a>
+				</div>
+				<div class="footer__content-item">
+					<span class="material-symbols-outlined">call</span>
+					<span class="footer__listtext phone">1900 123 789</span>
+				</div>
+				<div class="footer__content-item">
+					<span class="material-symbols-outlined">mail</span>
+					<a href="mailto:techtwo.customercare@gmail.com"
+						class="footer__listtext">DQC.customercare@gmail.com</a>
+				</div>
+			</div>
+		</div>
+		<!-- Biểu tượng chat -->
+		<div id="chat-icon" onclick="toggleChat()">
+			💬
+		</div>
+
+		<!-- Cửa sổ chat -->
+		<div id="chat-container">
+			<div id="chat-header">
+				Chatbot
+				<span onclick="toggleChat()">✖</span>
+			</div>
+			<div id="chat-box"></div>
+			<div id="chat-input-container">
+				<input type="text" id="chat-input" placeholder="Nhập tin nhắn...">
+				<button onclick="sendMessage()">Gửi</button>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer--bottom">
+		<div class="footer__container--bottom">
+			<p> 2025 </p>
+		</div>
+	</div>
+	<script src="/scripts/partials/footer.js"></script>
+</footer>

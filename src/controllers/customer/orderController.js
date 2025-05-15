@@ -7,7 +7,7 @@ const qs = require("qs");
 const axios = require("axios");
 const { env } = require("process")
 const Redis = require("ioredis");
-const redis = new Redis(); // Kết nối đến localhost:6379
+//const redis = new Redis(); // Kết nối đến localhost:6379
 // redis.on('connect', () => {
 // 	console.log('Connected to Redis successfully');
 // });

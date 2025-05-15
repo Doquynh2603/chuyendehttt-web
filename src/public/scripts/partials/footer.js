@@ -47,7 +47,6 @@ async function sendMessage() {
         }
 
         const data = await response.json();
-        // Kiểm tra trường "res" từ phản hồi của Django
         const botReply = data.res || 'No response from bot';
         chatBox.innerHTML += `<div class="bot-message">${botReply}</div>`;
         chatHistory.push({ sender: 'bot', text: botReply });
